@@ -1,14 +1,13 @@
 import React from "react"
-import Layout from "../components/layout"
-import Scenes from "../components/Scenes"
-import SEO from "../components/seo"
+import Layout from "components/common/Layout"
+import Scenes from "staticContainers/Scenes"
+import SEO from "components/common/SEO"
+import Header from "components/theme/Header"
 
-const IndexPage = () => (
+export default () => (
   <Layout>
     <SEO title="Home" />
-    <h1>Scenes</h1>
+    <Header />
     <Scenes />
   </Layout>
 )
-
-export default IndexPage
