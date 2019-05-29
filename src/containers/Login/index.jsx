@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react"
 import { navigate } from "gatsby"
+import setAuthToken from "helpers/setAuthToken"
 import Context from "components/common/Context"
 import Container from "components/common/Container"
 import SEO from "components/common/SEO"
@@ -45,8 +46,7 @@ export default () => {
       //   }
       // );
 
-      // Set the Bearer token header
-      // await setAuthToken(data.token);
+      setAuthToken(`Bearer ${process.env.AIRTABLE_API_KEY}`)
 
       dispatch({ type: "SAVE_USER", payload: { username } })
       window.localStorage.setItem("token", "our dummy token")

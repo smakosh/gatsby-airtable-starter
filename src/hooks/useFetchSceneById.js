@@ -1,27 +1,27 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import axios from "axios";
 
-export default () => {
+export default id => {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
   const [errors, setErrors] = useState(null);
 
-  const fetchScenes = async () => {
+  const fetchSceneById = useCallback(async () => {
     try {
       const { data } = await axios.get(
-        "https://api.airtable.com/v0/appCxaFkAnDYD1Wy4/Scenes"
+        `https://api.airtable.com/v0/appCxaFkAnDYD1Wy4/Scenes/${id}`
       );
-      setData(data.records);
+      setData(data);
       setLoading(false);
     } catch (err) {
       setErrors(err);
       setLoading(false);
     }
-  };
+  }, [id]);
 
   useEffect(() => {
-    fetchScenes();
-  }, []);
+    fetchSceneById();
+  }, [fetchSceneById]);
 
   return [loading, data, errors];
 };

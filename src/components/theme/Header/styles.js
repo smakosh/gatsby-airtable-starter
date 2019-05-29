@@ -1,9 +1,9 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 export const Wrapper = styled.div`
   background: #2196f3;
   padding: 2rem 0;
-`;
+`
 
 export const Flex = styled.div`
   display: flex;
@@ -19,17 +19,22 @@ export const Flex = styled.div`
     color: #fff;
     font-weight: bold;
   }
-`;
+`
 
 export const Links = styled.div`
   display: flex;
   align-items: center;
 
+  a {
+    margin: 0 1rem;
+  }
+
+  a:last-child,
   a:first-child {
-    margin-right: 1rem;
+    margin: unset;
   }
 
   @media (max-width: 680px) {
     display: none;
   }
-`;
+`

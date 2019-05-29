@@ -1,11 +1,12 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from "react"
+import setAuthToken from "helpers/setAuthToken"
 
 export default (user, dispatch) => {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true)
 
   const fetchUser = async () => {
     try {
-      const token = window.localStorage.getItem("token");
+      const token = window.localStorage.getItem("token")
       if (token) {
         // TODO: verify the token
         // const { data } = await axios({
@@ -17,31 +18,30 @@ export default (user, dispatch) => {
         //   },
         // })
 
-        // TODO: Set the new generated token
-        // await setAuthToken(token)
+        setAuthToken(`Bearer ${process.env.AIRTABLE_API_KEY}`)
 
         // TODO: Save the logged in user details
-        await dispatch({ type: "SAVE_USER", payload: { username: "Smakosh" } });
+        await dispatch({ type: "SAVE_USER", payload: { username: "Smakosh" } })
 
         // TODO: Set the new generated token to localStorage
         // window.localStorage.setItem('token', token)
-        setLoading(false);
+        setLoading(false)
       } else {
-        setLoading(false);
+        setLoading(false)
       }
     } catch (err) {
-      setLoading(false);
+      setLoading(false)
     }
-  };
+  }
 
   useEffect(() => {
     if (!user.isLoggedIn) {
-      fetchUser();
+      fetchUser()
     }
-  }, []); // eslint-disable-line
+  }, []) // eslint-disable-line
 
   return {
     loading,
-    isLoggedIn: user.isLoggedIn
-  };
-};
+    isLoggedIn: user.isLoggedIn,
+  }
+}
