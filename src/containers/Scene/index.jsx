@@ -39,7 +39,7 @@ export default ({ id }) => {
         </>
       ) : (
         <>
-          <h2>data.fields.Name</h2>
+          <h2>{data.fields.Name}</h2>
           <CardScene>
             <Card
               title={data.fields.Name}
