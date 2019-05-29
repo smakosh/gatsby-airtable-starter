@@ -1,5 +1,5 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
 import SEO from "components/common/SEO"
 import Container from "components/common/Container"
 import Card from "components/common/Card"
@@ -11,6 +11,7 @@ export default () => {
       airtable: allAirtable(filter: { table: { eq: "Scenes" } }) {
         edges {
           node {
+            id
             data {
               Name
               Location
@@ -34,20 +35,20 @@ export default () => {
       <h1>Static Scenes</h1>
       <Flex>
         {airtable.edges.map(
-          (
-            {
-              node: {
-                data: { Name, Location, Attachments },
-              },
+          ({
+            node: {
+              id,
+              data: { Name, Location, Attachments },
             },
-            i
-          ) => (
-            <CardScene key={i}>
-              <Card
-                title={Name}
-                description={Location}
-                image={Attachments[0].thumbnails.large.url}
-              />
+          }) => (
+            <CardScene key={id}>
+              <Link to={id}>
+                <Card
+                  title={Name}
+                  description={Location}
+                  image={Attachments[0].thumbnails.large.url}
+                />
+              </Link>
             </CardScene>
           )
         )}
