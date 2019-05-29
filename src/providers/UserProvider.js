@@ -13,7 +13,7 @@ export default ({ children }) => {
 
       await dispatch({ type: "LOGOUT" })
       window.localStorage.removeItem("token")
-      // setAuthToken(false)
+      setAuthToken(false)
       navigate("/app/")
     } catch (err) {
       console.log(err)

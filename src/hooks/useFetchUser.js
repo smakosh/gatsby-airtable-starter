@@ -18,7 +18,7 @@ export default (user, dispatch) => {
         //   },
         // })
 
-        setAuthToken(`Bearer ${process.env.AIRTABLE_API_KEY}`)
+        setAuthToken(`Bearer ${process.env.GATSBY_AIRTABLE_API_KEY}`)
 
         // TODO: Save the logged in user details
         await dispatch({ type: "SAVE_USER", payload: { username: "Smakosh" } })

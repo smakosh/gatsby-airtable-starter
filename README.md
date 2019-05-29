@@ -17,14 +17,15 @@
 
 [Yarn](https://yarnpkg.com/en/)
 [Airtable Account](https://airtable.com/invite/r/HZvSWsO8)
-> Using my referral link will get me $10 in credit
+
+> Using my referral link will get me \$10 in credit
 
 Please create a new file `.env.development` and put these env variables
 
 > You will have to create another `.env.production` file to build locally
 
 ```bash
-AIRTABLE_API_KEY=<<Your Aitable API KEY here>>
+GATSBY_AIRTABLE_API_KEY=<<Your Aitable API KEY here>>
 SCENES_BASE_ID=<<Your Aitable Base Id here>> (You can change the name of this env if you wish, but make sure to change it within the code as well)
 ```
 

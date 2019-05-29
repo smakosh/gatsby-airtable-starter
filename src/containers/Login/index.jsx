@@ -46,7 +46,7 @@ export default () => {
       //   }
       // );
 
-      setAuthToken(`Bearer ${process.env.AIRTABLE_API_KEY}`)
+      setAuthToken(`Bearer ${process.env.GATSBY_AIRTABLE_API_KEY}`)
 
       dispatch({ type: "SAVE_USER", payload: { username } })
       window.localStorage.setItem("token", "our dummy token")
