@@ -6,7 +6,7 @@
   "author": "Ismail Ghallou <ismai23l@hotmail.com>",
   "dependencies": {
     "@reach/router": "^1.2.1",
-    "axios": "^0.18.0",
+    "axios": "^0.19.0",
     "babel-plugin-styled-components": "^1.10.0",
     "dotenv": "^8.0.0",
     "gatsby": "^2.6.0",
