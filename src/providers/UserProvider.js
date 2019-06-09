@@ -2,6 +2,7 @@ import React, { useReducer } from "react"
 import { navigate } from "gatsby"
 import Context from "components/common/Context"
 import UserReducer from "reducers/UserReducer"
+import setAuthToken from "helpers/setAuthToken"
 
 export default ({ children }) => {
   const [user, dispatch] = useReducer(UserReducer, [])
